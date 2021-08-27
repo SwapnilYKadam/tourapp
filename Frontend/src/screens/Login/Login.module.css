@@ -1,0 +1,58 @@
+.loginpage {
+  background-color: #ddd;
+  height: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logindiv {
+  background-color: #fff;
+  min-height: 35rem;
+  max-height: 40rem;
+  width: 30rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: #333;
+  box-shadow: 5px 5px 10px #ccc;
+}
+.error{
+  color: rgb(117, 17, 17);
+  background: rgb(233, 170, 108);
+  font-size: 1rem;
+  padding: 5px;
+  padding-left: 10px;
+}
+.logindiv input {
+  width: 90%;
+  font-size: 1rem;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 1.5rem;
+  border: none;
+  background-color: #eee;
+  outline: none;
+}
+
+.logindiv input::placeholder {
+  color: #ccc;
+}
+.navigate {
+  color: #777;
+  margin-top: 2rem;
+}
+.navigate span {
+  color: #20bf6b;
+  cursor: pointer;
+}
+@media screen and (max-width: 478px) {
+  .logindiv {
+    width: 25rem;
+  }
+}
+@media screen and (max-width: 478px) {
+  /* .loginpage {
+    background-color: white;
+  } */
+}

@@ -1,0 +1,34 @@
+/*Primary :  #20bf6b
+  light : #7dd56f,
+   dark   :#28b487 */
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+  font-family: "poppins", sans-serif;
+}
+.btn {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  background-color: #20bf6b;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+.title {
+  color: #28b488;
+  margin-bottom: 2rem;
+}
+.loading{
+  min-height: 90vh;
+  width:100%;
+  display: flex;;
+  justify-content: center;
+  align-items: center;
+}

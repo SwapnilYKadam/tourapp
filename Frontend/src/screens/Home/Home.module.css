@@ -1,0 +1,14 @@
+.home {
+  background-color: #ddd;
+  min-height: 90vh;
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    justify-content: center;
+  }
+}

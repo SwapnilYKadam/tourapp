@@ -1,0 +1,28 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Tour booking site",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node Backend/server.js",
+    "debug": "ndb Backend/server.js",
+    "client": "npm start --prefix Frontend",
+    "dev": "concurrently \"npm run start\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix Frontend && npm run build --prefix Frontend"
+  },
+  "author": "Swapnil Kadam",
+  "license": "ISC",
+  "dependencies": {
+    "@stripe/stripe-js": "^1.17.1",
+    "bcrypt": "^5.0.1",
+    "colors": "^1.4.0",
+    "concurrently": "^6.2.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.7",
+    "stripe": "^8.170.0"
+  }
+}
