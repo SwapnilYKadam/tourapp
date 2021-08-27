@@ -1,0 +1,6 @@
+[submodule "Frontend"]
+	path = Frontend
+	url = C:/Program Files/Git/Frontend
+[submodule "natoursApp"]
+	path = natoursApp
+	url = https://github.com/SwapnilYKadam/natoursApp.git
