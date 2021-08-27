@@ -1,11 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
+import path from 'path'
 import connectDB from "./config/db.js";
 import tourRoutes from "./routes/tourRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import bookingRoute from "./routes/bookingRoute.js";
-import { errorHandler } from "./middleware/errorHandler.js";
-import path from 'path'
+// import { errorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
 
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.use(errorHandler);
+// app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
