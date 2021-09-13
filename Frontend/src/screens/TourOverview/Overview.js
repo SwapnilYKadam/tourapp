@@ -169,12 +169,7 @@ const Overview = ({ match }) => {
               </div>
               <div>
                 {userInfo ? (
-                  <Link
-                    to="/auth/login"
-                    id="booking"
-                    className="btn"
-                    onClick={handleBooking}
-                  >
+                  <Link id="booking" className="btn" onClick={handleBooking}>
                     Book Tour
                   </Link>
                 ) : (
