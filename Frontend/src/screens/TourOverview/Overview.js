@@ -27,22 +27,30 @@ const Overview = ({ match }) => {
 
   const handleBooking = () => {
     let bookingBtn = document.getElementById("booking");
-    bookingBtn.textContent = 'Processing...'
+    bookingBtn.textContent = "Processing...";
     const addStripe = async () => {
-      const session = await axios.get(`/api/booking/checkoutsession/${id}/${userInfo._id}`);
+      const config = {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+
+      const session = await axios.get(
+        `/api/booking/checkoutsession/${id}/${userInfo._id}`,
+        config
+      );
 
       const stripePromise = loadStripe(
         "pk_test_51JQctCSBSSpWSSeFvjdOljj6944N2c5isoW0H3wWOo0tQ8ggF5GiKlwCWyr3uYY6BWmdIrXTOWDQX3XYhHGBqS3I00u9h5FtJ2"
       );
       const stripe = await stripePromise;
 
-
       await stripe.redirectToCheckout({
         sessionId: session.data.session.id,
       });
     };
-    addStripe()
-  }
+    addStripe();
+  };
 
   if (!loading && tour && Object.keys(tour).length !== 0)
     // if (Object.keys(tour).length !== 0)
@@ -103,7 +111,10 @@ const Overview = ({ match }) => {
                   <div className={classes.details_spec_fact}>
                     <img
                       alt="guide"
-                      src={require(`./../../img/users/${tour.guides[0].photo}`).default}
+                      src={
+                        require(`./../../img/users/${tour.guides[0].photo}`)
+                          .default
+                      }
                     />
                     <p>
                       <b className={classes.role}>{tour.guides[0].role}</b>
@@ -113,7 +124,10 @@ const Overview = ({ match }) => {
                   <div className={classes.details_spec_fact}>
                     <img
                       alt="guide"
-                      src={require(`./../../img/users/${tour.guides[1].photo}`).default}
+                      src={
+                        require(`./../../img/users/${tour.guides[1].photo}`)
+                          .default
+                      }
                     />
                     <p>
                       <b className={classes.role}>{tour.guides[1].role}</b>
@@ -155,12 +169,19 @@ const Overview = ({ match }) => {
               </div>
               <div>
                 {userInfo ? (
-                  <Link id="booking" className="btn" onClick={handleBooking}>Book Tour</Link>
+                  <Link
+                    to="/auth/login"
+                    id="booking"
+                    className="btn"
+                    onClick={handleBooking}
+                  >
+                    Book Tour
+                  </Link>
                 ) : (
-                    <a className="btn" href="/auth/login">
-                      log in to book tour
+                  <a className="btn" href="/auth/login">
+                    log in to book tour
                   </a>
-                  )}
+                )}
               </div>
             </div>
           </div>

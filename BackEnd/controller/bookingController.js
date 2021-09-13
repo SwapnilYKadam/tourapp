@@ -7,9 +7,7 @@ const stripe = new Stripe(
 
 export const getCheckoutSession = async (req, res, next) => {
   const tour = await Tour.findById(req.params.tourId);
-  console.log(req.params.userId)
   const user = await User.findById(req.params.userId);
-  console.log(user)
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     success_url: `${req.protocol}://${req.get("host")}/`,
